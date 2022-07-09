@@ -10,8 +10,8 @@ You can assume, for the purpose of this kata, that the supplied array will not b
 */
 
 // My solution
-class SmallestIntegerFinder {
-    findSmallestInt(args) {
+
+    function findSmallestInt(args) {
       return args.sort((a,b)=>a-b)[0]
     }
-  }
+  
