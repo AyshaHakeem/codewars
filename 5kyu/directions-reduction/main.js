@@ -40,12 +40,10 @@ if you want to translate, please ask before translating.
 */
 
 function dirReduc(arr){
+    let result= []
     const opposites = {NORTH:"SOUTH", SOUTH:"NORTH", EAST:"WEST", WEST:"EAST"}
-    arr.reduce((result,el)=>{
-        result.slice(-1)==opposites[el] ? result.pop() : result.push(el)
-        return result
-    },[]
-    )
+    arr.forEach(el=>result.slice(-1)==opposites[el] ? result.pop() : result.push(el))
+    return result
 }
 
 
