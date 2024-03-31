@@ -9,6 +9,16 @@ findNb(1071225) --> 45
 findNb(91716553919377) --> -1
 */
 
+// second attempts, refactor code
+function findN(m) {
+  let n = 1;
+  while (m > 0) {
+    m -= Math.pow(n, 3);
+    n++;
+  }
+  return m == 0 ? n - 1 : -1;
+}
+
 function findNb(m) {
   let result = 0;
   for (let i = 1; i < m; i++) {
