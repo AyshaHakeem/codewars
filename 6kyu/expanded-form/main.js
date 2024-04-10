@@ -7,6 +7,17 @@ expandedForm(42); // Should return '40 + 2'
 expandedForm(70304); // Should return '70000 + 300 + 4'
 NOTE: All numbers will be whole numbers greater than 0.
 */
+// second attempt
+function expandedForm(num) {
+  return String(num)
+    .split("")
+    .reverse()
+    .map((n, i) => n * Math.pow(10, i))
+    .filter((n) => n !== 0)
+    .reverse()
+    .join(" + ");
+}
+
 function expandedForm(num) {
   let str = String(num),
     result = [],
