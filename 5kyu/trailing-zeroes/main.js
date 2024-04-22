@@ -22,7 +22,3 @@ function zeros(n) {
   }
   return count;
 }
-
-//  n:30 n:6
-//  n>5  n>5
-//  6    1
