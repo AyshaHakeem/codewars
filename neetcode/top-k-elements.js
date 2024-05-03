@@ -18,7 +18,17 @@ class Solution {
    * @param {number} k
    * @return {number[]}
    */
-  topKFrequent(nums, k) {
+  // second attempt
+  topKFrequent2(nums, k) {
+    let map = new Map();
+    nums.forEach((n) => map.set(n, (map.get(n) || 0) + 1));
+    return [...map.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map((n) => n[0])
+      .slice(0, k);
+  }
+
+  topKFrequent1(nums, k) {
     let obj = {};
     let result = {};
     nums.forEach((n) => (obj[n] ? (obj[n] += 1) : (obj[n] = 1)));
