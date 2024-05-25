@@ -22,7 +22,28 @@ class Solution {
    * @param {number[]} nums
    * @return {number[]}
    */
-  productExceptSelf(nums) {
+
+  productExceptSelf02(nums) {
+    let product = 1;
+    let result = [];
+
+    // calculate product to left of an element
+    for (let i = 0; i < nums.length; i++) {
+      result.push(product);
+      product *= nums[i];
+    }
+
+    // multiply left product with right product
+    product = 1;
+    for (let i = nums.length - 1; i >= 0; i--) {
+      result[i] *= product;
+      product *= nums[i];
+    }
+
+    return result;
+  }
+
+  productExceptSelf01(nums) {
     return nums.map((n, index) => {
       let product = 1;
       for (let i = 0; i < nums.length; i++) {
